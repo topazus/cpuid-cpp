@@ -3,13 +3,11 @@
 
 #include <cstdint>
 
-class CPUID
-{
+class CPUID {
   uint32_t regs[4];
 
-public:
-  explicit CPUID(unsigned i)
-  {
+ public:
+  explicit CPUID(unsigned i) {
     asm volatile("cpuid"
                  : "=a"(regs[0]), "=b"(regs[1]), "=c"(regs[2]), "=d"(regs[3])
                  : "a"(i), "c"(0));
@@ -22,14 +20,11 @@ public:
   const uint32_t &EDX() const { return regs[3]; }
 };
 
-class CPUID2
-{
+class CPUID2 {
   uint32_t regs[4];
 
-public:
-  explicit CPUID2(unsigned funcId, unsigned subFuncId)
-  {
-
+ public:
+  explicit CPUID2(unsigned funcId, unsigned subFuncId) {
     asm volatile("cpuid"
                  : "=a"(regs[0]), "=b"(regs[1]), "=c"(regs[2]), "=d"(regs[3])
                  : "a"(funcId), "c"(subFuncId));
@@ -42,4 +37,4 @@ public:
   const uint32_t &EDX() const { return regs[3]; }
 };
 
-#endif // CPUID_HPP
+#endif  // CPUID_HPP

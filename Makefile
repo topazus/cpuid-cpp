@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_cpuid
+# Target rules for targets named cpuid_exe
 
 # Build rule for target.
-test_cpuid: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_cpuid
-.PHONY : test_cpuid
+cpuid_exe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cpuid_exe
+.PHONY : cpuid_exe
 
 # fast build rule for target.
-test_cpuid/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/build
-.PHONY : test_cpuid/fast
+cpuid_exe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/build
+.PHONY : cpuid_exe/fast
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -142,7 +142,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -150,7 +150,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/utils.o: src/utils.cpp.o
@@ -158,7 +158,7 @@ src/utils.o: src/utils.cpp.o
 
 # target to build an object file
 src/utils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/utils.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/utils.cpp.o
 .PHONY : src/utils.cpp.o
 
 src/utils.i: src/utils.cpp.i
@@ -166,7 +166,7 @@ src/utils.i: src/utils.cpp.i
 
 # target to preprocess a source file
 src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/utils.cpp.i
 .PHONY : src/utils.cpp.i
 
 src/utils.s: src/utils.cpp.s
@@ -174,7 +174,7 @@ src/utils.s: src/utils.cpp.s
 
 # target to generate assembly for a file
 src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_cpuid.dir/build.make CMakeFiles/test_cpuid.dir/src/utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpuid_exe.dir/build.make CMakeFiles/cpuid_exe.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_cpuid"
+	@echo "... cpuid_exe"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

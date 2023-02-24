@@ -1,5 +1,6 @@
 #ifndef UTILS_HPP
 #define UTILS_HPP
+#include <string>
 #include <vector>
 
 /* Only for 32bit values */
@@ -14,24 +15,26 @@
 #define extract_bit(x, n) extract_bits(x, n, n)
 
 // https://github.com/LibreOffice/online/blob/d0edfeabbdc969a9a66cf90976a63c2f4403a6d3/wsd/ProofKey.cpp#L41-L83
-std::vector<unsigned char> getBytesLE(const unsigned char *bytesInHostOrder, const size_t n);
+std::vector<unsigned char> getBytesLE(const unsigned char *bytesInHostOrder,
+                                      const size_t n);
 
-std::vector<unsigned char> getBytesBE(const unsigned char *bytesInHostOrder, const size_t n);
+std::vector<unsigned char> getBytesBE(const unsigned char *bytesInHostOrder,
+                                      const size_t n);
 
 // Returns passed number as vector of bytes (little-endian)
 template <typename T>
-std::vector<unsigned char> ToLEBytes(const T &x)
-{
+std::vector<unsigned char> ToLEBytes(const T &x) {
   return getBytesLE(reinterpret_cast<const unsigned char *>(&x), sizeof(x));
 }
 
 // Returns passed number as vector of bytes (network order = big-endian)
 template <typename T>
-std::vector<unsigned char> ToNetworkOrderBytes(const T &x)
-{
+std::vector<unsigned char> ToNetworkOrderBytes(const T &x) {
   return getBytesBE(reinterpret_cast<const unsigned char *>(&x), sizeof(x));
 }
 
 std::string num_to_str(int num);
 
-#endif // UTILS_HPP
+char *num_to_str2(int num);
+
+#endif  // UTILS_HPP
